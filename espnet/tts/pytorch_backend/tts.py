@@ -621,6 +621,7 @@ def decode(args):
         logging.info('(%d/%d) %s (size: %d->%d, focus rate: %.3f)' % (
             idx + 1, len(js.keys()), utt_id, x.size(0), outs.size(0), focus_rate))
         feat_writer[utt_id] = outs.cpu().numpy()
+        np.save(f"/decode_result/{utt_id}.npy", outs)
         if args.save_durations:
             ds = _convert_att_to_duration(att_ws)
             dur_writer[utt_id] = ds.cpu().numpy()

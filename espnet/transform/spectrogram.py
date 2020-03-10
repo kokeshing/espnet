@@ -79,13 +79,13 @@ def spectrogram(x, n_fft, n_shift, win_length=None, window='hann'):
 
 def logmelspectrogram(x, fs, n_mels, n_fft, n_shift,
                       win_length=None, window='hann', fmin=None, fmax=None,
-                      eps=1e-10, pad_mode='reflect'):
+                      eps=1e-5, pad_mode='constant'):
     # stft: (Time, Channel, Freq) or (Time, Freq)
     x_stft = stft(x, n_fft=n_fft, n_shift=n_shift, win_length=win_length,
                   window=window, pad_mode=pad_mode)
 
     return stft2logmelspectrogram(x_stft, fs=fs, n_mels=n_mels, n_fft=n_fft,
-                                  fmin=fmin, fmax=fmax, eps=eps)
+                                  fmin=fmin, fmax=None, eps=1e-5)
 
 
 class Spectrogram(object):

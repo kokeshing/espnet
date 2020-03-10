@@ -21,11 +21,11 @@ resume=""    # the snapshot path to resume (if set empty, no effect)
 # feature extraction related
 fs=24000    # sampling frequency
 fmax=7600   # maximum frequency
-fmin=80     # minimum frequency
+fmin=0     # minimum frequency
 n_mels=80   # number of mel basis
-n_fft=2048  # number of fft points
-n_shift=300 # number of shift points
-win_length=1200 # window length
+n_fft=1024  # number of fft points
+n_shift=256 # number of shift points
+win_length=1024 # window length
 
 # Input transcription type: char or phn
 # Example

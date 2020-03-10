@@ -97,7 +97,7 @@ def main():
                 win_length=args.win_length,
                 window=args.window,
                 fmin=args.fmin,
-                fmax=args.fmax)
+                fmax=None)
             writer[utt_id] = lmspc
 
 
